@@ -2,15 +2,20 @@ package aoc21
 
 object Day1 extends App {
   println("hello world")
-  var lLength = 10
   var nOfHigher = 0
 
-  for (i <- 0 to lLength) {
+  val lList = List(
+    0, 1, 2, 3, 2, 15, 3, 16, 17, 15
+  )
+  val lLength = lList.length
 
-    if (i == 5) {
-      println(i)
+  for (i <- 0 to lLength - 2) {
+    var nFirst = lList(i)
+    var nSecond = lList(i + 1)
+    if (nFirst < nSecond) {
+      nOfHigher += 1
     }
-
   }
+  println(nOfHigher)
 
 }
