@@ -10,8 +10,8 @@ object Day1 extends App {
   val lLength = lList.length
 
   for (i <- 0 to lLength - 2) {
-    var nFirst = lList(i)
-    var nSecond = lList(i + 1)
+    val nFirst = lList(i)
+    val nSecond = lList(i + 1)
     if (nFirst < nSecond) {
       nOfHigher += 1
     }
