@@ -6,12 +6,12 @@ object Day1 extends App {
   var nOfHigher = 0
 
   val lList =
-    Source.fromFile("https://adventofcode.com/2021/day/1/input").getLines.toList
+    Source.fromFile("inputAOCD1.1.txt").getLines.toList
   val lLength = lList.length
 
   for (i <- 0 to lLength - 2) {
-    val nFirst = lList(i)
-    val nSecond = lList(i + 1)
+    val nFirst = lList(i).toInt
+    val nSecond = lList(i + 1).toInt
     if (nFirst < nSecond) {
       nOfHigher += 1
     }
