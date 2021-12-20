@@ -2,7 +2,7 @@ package aoc21
 import scala.io.Source
 
 object Day1 extends App {
-  println("hello world")
+  println("hello eamonn(the best person)")
   var nOfHigher = 0
 
   val lList =
