@@ -1,12 +1,12 @@
 package aoc21
+import scala.io.Source
 
 object Day1 extends App {
   println("hello world")
   var nOfHigher = 0
 
-  val lList = List(
-    0, 1, 2, 3, 2, 15, 3, 16, 17, 15
-  )
+  val lList =
+    Source.fromFile("https://adventofcode.com/2021/day/1/input").getLines.toList
   val lLength = lList.length
 
   for (i <- 0 to lLength - 2) {
