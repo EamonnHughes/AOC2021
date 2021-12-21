@@ -2,7 +2,7 @@ package aoc21
 
 import scala.io.Source
 
-object Day2_1 extends App {
+object Day2_2 extends App {
   val lList = Source.fromFile("inputAOCD2.1.txt").getLines.toList
 
   val ForwardRE = "forward ([0-9]+)".r
@@ -11,6 +11,7 @@ object Day2_1 extends App {
 
   var pX = 0
   var pY = 0
+  var pAim = 0
 
   val lLup = lList.map {
     case ForwardRE(num) => num.toInt
@@ -20,12 +21,13 @@ object Day2_1 extends App {
   for (i <- 0 to lList.length - 1) {
     if (lList(i) contains ("forward")) {
       pX += lLup(i)
+      pY += lLup(i) * pAim
     }
     if (lList(i) contains ("up")) {
-      pY -= lLup(i)
+      pAim -= lLup(i)
     }
     if (lList(i) contains ("down")) {
-      pY += lLup(i)
+      pAim += lLup(i)
     }
   }
 
