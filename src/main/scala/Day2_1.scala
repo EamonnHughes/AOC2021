@@ -16,12 +16,8 @@ object Day2_1 extends App {
     val Up = "up"
     val Down = "down"
     if (s contains mX) {
-      pX += 1
-    } else if (s contains Up) {
-      pY += 1
-    } else {
-      total += 1
-    }
+      val tot = s.
+    } else if (s contains Up) {} else {}
   }
   //total = pX * pY
   println(s" $pX" + s" $pY" + s" $total")
