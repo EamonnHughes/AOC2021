@@ -4,14 +4,14 @@ import scala.io.Source
 
 object Day3_2 extends App {
   val lList = Source.fromFile("inputAOC3.1.txt").getLines.toList
+  var cList = lList
+  var nCList = lList
 
   def whichDigit(index: Int): Char = {
-
-    var higherNum = ' '
     val nOf1 = lList.count(str => str.charAt(index) == '1')
-    return higherNum
-
+    if (nOf1 >= lList.length / 2) '1' else '0'
   }
-  println()
-
+  while (cList.length > 1) {
+    for (index <- cList) {}
+  }
 }

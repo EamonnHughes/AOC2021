@@ -4,31 +4,20 @@ import scala.io.Source
 
 object Day3_1 extends App {
   val lList = Source.fromFile("inputAOC3.1.txt").getLines.toList
-  var MoCom = ""
-  var LeCom = ""
-  for (i <- 0 to 11) {
-    var numX = 0
-    var numY = 0
-    for (y <- 0 to lList.length - 1) {
 
-      if (lList(y).charAt(i) == '0') {
-        numX += 1
-      } else {
-        numY += 1
-      }
-    }
-    if (numX > numY) {
-      MoCom = MoCom.patch(i, "0", 0)
-      LeCom = LeCom.patch(i, "1", 0)
-    } else {
-      MoCom = MoCom.patch(i, "1", 0)
-      LeCom = LeCom.patch(i, "0", 0)
-    }
+  def whichDigit(index: Int): Char = {
+    val nOf1 = lList.count(str => str.charAt(index) == '1')
+    if (nOf1 >= lList.length / 2) '1' else '0'
   }
-  val gam = Integer.parseInt(MoCom, 2).toInt
-  val eps = Integer.parseInt(LeCom, 2).toInt
-  println(gam)
-  println(eps)
-  println(gam * eps)
+
+  val indices = (0 until 12).toList
+  val digits = indices.map(index => whichDigit(index))
+  val nDigits = digits.map(digit =>
+    if (digit == '0') '1'
+    else '0'
+  )
+  val totalA = Integer.parseInt(digits.mkString, 2)
+  val totalB = Integer.parseInt(nDigits.mkString, 2)
+  println(totalA * totalB)
 
 }
