@@ -7,7 +7,16 @@ object Day4_1 extends App {
   val firstLine = lIter.next()
   val lList = lIter.toList
   val Input = firstLine.split(",")
-  println(Input.mkString(","))
-  println(lList)
+  var index = 0
+  // while no bingo
+  while (index < Input.length) {
+
+    println(Input(index))
+    index += 1
+  }
+  //if bingo
+  if (1 == 1) {
+    println("u " + 1)
+  }
 
 }
