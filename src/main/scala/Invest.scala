@@ -6,7 +6,7 @@ object Invest extends App {
   var invest = 0.0
   var depos = 1000.0
   var perc = .1
-  while (mo <= 480) {
+  while (mo <= 240) {
     invest += depos
     invest += invest * perc / 12
     mo += 1
