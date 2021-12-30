@@ -19,7 +19,7 @@ case class Board(rows: List[List[Int]]) {
   }
 }
 
-object Day4_1 extends App {
+object Day4_2 extends App {
   val lIter = Source.fromFile("AOCD4.txt").getLines
   val firstLine = lIter.next()
   val lList = lIter.toList.filter(str => str != "")
