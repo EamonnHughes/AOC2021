@@ -5,7 +5,7 @@ import scala.io.Source
 val cIndices = (0 to 4).toList
 
 case class Board(rows: List[List[Int]]) {
-  def check(Bingoed: List[Int]): Boolean = {
+  def isComplete(Bingoed: List[Int]): Boolean = {
     def isBingo(int: Int) = Bingoed.contains(int)
     def isRowComplete(row: List[Int]) = row.forall(int => isBingo(int))
     def isColumnComplete(col: Int) = rows.forall(row => isBingo(row(col)))
@@ -33,10 +33,10 @@ object Day4_1 extends App {
   while (!isWon) {
     val nextNum = Input(index)
     bingoed = nextNum :: bingoed
-    isWon = BoardList.exists(board => board.check(bingoed))
+    isWon = BoardList.exists(board => board.isComplete(bingoed))
     index += 1
   }
-  val wonBoard = BoardList.find(board => board.check(bingoed)).get
+  val wonBoard = BoardList.find(board => board.isComplete(bingoed)).get
   println(bingoed(0) * wonBoard.sumUnmarked(bingoed))
 
 }
